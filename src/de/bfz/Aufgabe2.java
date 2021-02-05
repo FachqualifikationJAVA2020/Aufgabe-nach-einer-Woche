@@ -28,6 +28,11 @@ public class Aufgabe2 {
 
         //  Aktuelle Lottozahlen ausgeben
         System.out.print("Aktuelle Lotto-Zahlen: ");
+
+        // Sortieren
+        Arrays.sort(ziehung);
+
+        // Zahl nach Zahl ausgeben
         for(int i = 0; i < ziehung.length; i++){
             System.out.print(ziehung[i] + " ");
         }
@@ -35,6 +40,10 @@ public class Aufgabe2 {
 
         //  Eigener Lottotip ausgeben
         System.out.print("Dein Lottotip: ");
+
+        // Java bringt alles mit zum Sortieren =)
+        Arrays.sort(lottotipp);
+
         for(int i = 0; i < lottotipp.length; i++){
             System.out.print(lottotipp[i] + " ");
         }
@@ -44,4 +53,20 @@ public class Aufgabe2 {
         System.out.println("Sie haben " + anzahlTreffer + " Richtige");
 
     }
+    static void sortiere(int[] array) {
+        int n = array.length;
+        for(int i = 0; i < n-1; i++) {
+            for(int j = 0; j < n-1-i; j++) {
+                if (array[j] > array[j+1]) {
+                    int temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+    }
+
+
+
+
 }
